@@ -437,6 +437,11 @@ footer{background:#060E1A;padding:64px 6% 32px}
 /* ── COUNTERS ── */
 .counter{display:inline-block}
 
+/* ── Grids that need responsive control (previously inline) ── */
+.hero-grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.automacoes-grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;position:relative;z-index:1}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1024px){
   h1{font-size:46px}
@@ -448,17 +453,42 @@ footer{background:#060E1A;padding:64px 6% 32px}
   .tl-item{flex:0 0 50%;margin-bottom:32px}
   .timeline::before{display:none}
   .hero-visual-wrap{display:none}
+  .hero-grid-2col{grid-template-columns:1fr;gap:0}
+  .automacoes-grid-2col{grid-template-columns:1fr;gap:40px}
 }
 @media(max-width:768px){
-  h1{font-size:36px;letter-spacing:-1px}
-  h2{font-size:30px}
+  h1{font-size:34px;letter-spacing:-1px}
+  h2{font-size:28px}
+  section{padding:70px 6%}
+  nav{padding:0 5%;height:60px}
+  .logo-name{font-size:16px}
+  .nav-cta{padding:9px 16px;font-size:13px}
   nav ul{display:none}
-  .bento-grid,.pricing-grid{grid-template-columns:1fr}
+  .bento-grid,.pricing-grid,.approach-grid{grid-template-columns:1fr}
   .pillars-grid,.stack-grid{grid-template-columns:1fr 1fr}
-  .hero-stats{flex-wrap:wrap;gap:24px}
+  .hero{padding:100px 5% 60px}
+  .hero-sub{font-size:16px}
+  .hero-btns{flex-direction:column;gap:12px}
+  .hero-btns a{text-align:center;width:100%}
+  .hero-stats{flex-wrap:wrap;gap:20px 28px}
   .stat-item{border-right:none!important;padding-right:0!important;margin-right:0!important}
+  .stat-num{font-size:24px}
   .tl-item{flex:0 0 100%}
-  .cta-section h2{font-size:32px}
+  .cta-section{padding:80px 5%}
+  .cta-section h2{font-size:28px}
+  .cta-section p{font-size:15px}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .price-card{padding:28px}
+  .plan-price{font-size:30px}
+}
+@media(max-width:480px){
+  h1{font-size:28px}
+  h2{font-size:24px}
+  .section-sub{font-size:15px}
+  .pillars-grid,.stack-grid{grid-template-columns:1fr}
+  .btn-primary,.btn-outline{padding:13px 22px;font-size:14px}
+  .bento-card{padding:24px}
+  .eyebrow{font-size:10px;letter-spacing:2px}
 }
 </style>
 </head>
@@ -489,7 +519,7 @@ footer{background:#060E1A;padding:64px 6% 32px}
   <div class="hero-orb2"></div>
   <div class="hero-grid-overlay"></div>
   <div class="hero-inner">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <div class="hero-grid-2col">
       <div>
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
@@ -595,14 +625,14 @@ footer{background:#060E1A;padding:64px 6% 32px}
 <!-- AUTOMAÇÕES -->
 <section id="automacoes" style="background:#F8FAFC;padding:110px 6%">
   <div class="section-inner">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+    <div class="automacoes-grid-2col">
       <div class="reveal-left">
         <span class="eyebrow">Leque de automações</span>
         <h2>O que podemos automatizar na sua empresa</h2>
         <p class="section-sub">IA aplicada em qualquer área que gere trabalho manual repetitivo. Se é processo, pode virar automação.</p>
       </div>
       <div>
-        <div class="pillars-grid" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="pillars-grid">
           <div class="pillar-card reveal delay-1">
             <div class="pillar-icon">💬</div>
             <h4>Atendimento</h4>
@@ -727,7 +757,7 @@ footer{background:#060E1A;padding:64px 6% 32px}
       <h2>Cada projeto é único — assim como o seu negócio</h2>
       <p class="section-sub">Não acreditamos em pacotes engessados. Entendemos o seu problema e construímos a solução certa para o seu contexto.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;position:relative;z-index:1">
+    <div class="approach-grid">
       <div class="price-card reveal delay-1">
         <div style="width:48px;height:48px;border-radius:14px;background:rgba(26,92,255,0.15);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px">🎯</div>
         <div class="plan-name">Diagnóstico gratuito</div>
